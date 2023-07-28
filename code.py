@@ -4,7 +4,7 @@ import streamlit as st
 conn = st.experimental_connection('snowpark')
 
 # Perform query.
-df = conn.query('SELECT * from KORIA_WEATHER_REPORT;', ttl=600)
+df = conn.query('SELECT * from SOURTH_KORIA_COVID;', ttl=600)
 
 # Print results.
 #for row in df.itertuples():
