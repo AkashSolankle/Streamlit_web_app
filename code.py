@@ -15,7 +15,7 @@ TTL = 24 * 60 * 60
 
 # Using `experimental_memo()` to memoize function executions
 @st.experimental_memo(ttl=TTL)
-    def get_databases(_connector) -> pd.DataFrame:
+def get_databases(_connector) -> pd.DataFrame:
     """Get all databases available in Snowflake"""
     return pd.read_sql("SHOW DATABASES;", _connector)
 
