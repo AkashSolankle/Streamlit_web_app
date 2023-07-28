@@ -7,7 +7,8 @@ conn = st.experimental_connection('snowpark')
   #st.balloons()
 #Title
 st.title('First :blue[Streamlit] web app :sunglasses:')
-
+st.text("")
+st.text("")
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
