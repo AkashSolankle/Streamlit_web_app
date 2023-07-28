@@ -9,6 +9,7 @@ conn = st.experimental_connection('snowpark')
 st.title('First :blue[Streamlit] web app :sunglasses:')
 st.text("")
 st.text("")
+st.sidebar.success('Welcome to Home Page')
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
