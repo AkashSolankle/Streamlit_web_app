@@ -1,9 +1,11 @@
 import streamlit as st
-from snowflake.snowpark import Session
-from secrets import SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PASSWORD
+from snowflake.connector import connect
+from snowflake.connector.connection import SnowflakeConnection
+import toml
 
 
-session = Session(url=st.secrets["SNOWFLAKE_ACCOUNT"], user=st.secrets["SNOWFLAKE_USER"], password=st.secrets["SNOWFLAKE_PASSWORD"])
-
-df = session.sql("SELECT * FROM PETS.MYTABLE").to_pandas()
-st.write(df)
+@st.experimental_singleton()
+def get_connector() -> SnowflakeConnection:
+    """Create a connector to SnowFlake using credentials filled in Streamlit secrets"""
+    connector = connect(**st.secrets["snowflake"], client_session_keep_alive=True)
+    return connector
