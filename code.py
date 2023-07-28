@@ -11,7 +11,7 @@ st.title('First :blue[Streamlit] web app :sunglasses:')
 st.text("")
 st.text("")
 
-st.sidebar.success('Welcome to Home Page')
+st.sidebar.success('Welcome to Home Page :tada:')
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
