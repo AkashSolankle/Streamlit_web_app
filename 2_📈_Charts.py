@@ -1,1 +1,3 @@
-st.area_chart(df)
+import streamlit as st
+
+st.title('Charts')
