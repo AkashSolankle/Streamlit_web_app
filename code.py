@@ -2,6 +2,8 @@ import streamlit as st
 
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
+#status elements
+st.snow()
 
 #Title
 st.title('First :blue[Streamlit] web app :sunglasses:')
