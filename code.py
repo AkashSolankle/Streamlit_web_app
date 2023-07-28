@@ -5,7 +5,7 @@ import toml
 
 
 
-# Share the connector across all users connected to the app
+    # Share the connector across all users connected to the app
     @st.cache_resource()
     def get_connector() -> SnowflakeConnection:
         """Create a connector to SnowFlake using credentials filled in Streamlit secrets"""
