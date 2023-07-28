@@ -8,4 +8,4 @@ df = conn.query('SELECT * from MYTABLE;', ttl=600)
 
 # Print results.
 for row in df.itertuples():
-    st.write({row.NAME}{row.PET})
+    st.write({row.NAME}:{row.PET})
