@@ -3,9 +3,15 @@ import streamlit as st
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
 
-st.title('First :blue[Streamlit] web app emojis :sunglasses:')
+#Title
+st.title('First :blue[Streamlit] web app :sunglasses:')
+
+#Code block
+code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
+st.code(code, language='python')
+
 # Perform query.
-df = conn.query('SELECT BIRTH_YEAR,PROVINCE from SOURTH_KORIA_COVID;', ttl=600)
+df = conn.query('SELECT * from MYTABLE;', ttl=600)
 
 # Print results.
 #for row in df.itertuples():
