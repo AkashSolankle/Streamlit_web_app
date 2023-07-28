@@ -10,6 +10,8 @@ st.title('First :blue[Streamlit] web app :sunglasses:')
 code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
 st.code(code, language='python')
 
+with st.chat_message("user"):
+    st.write("Hello 👋")
 # Perform query.
 df = conn.query('SELECT * from MYTABLE;', ttl=600)
 
