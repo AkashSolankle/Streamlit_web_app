@@ -6,7 +6,7 @@ conn = st.experimental_connection('snowpark')
   #st.snow()
   #st.balloons()
 #Title
-  st.title('First :blue[Streamlit] web app :sunglasses:')
+st.title('First :blue[Streamlit] web app :sunglasses:')
 
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
@@ -15,11 +15,11 @@ conn = st.experimental_connection('snowpark')
 #with st.chat_message("user"):
 #    st.write("Hello 👋")
 # Perform query.
-  df = conn.query('SELECT * from MYTABLE;', ttl=600)
+df = conn.query('SELECT * from MYTABLE;', ttl=600)
 
 # Print results.
   #for row in df.itertuples():
   #    st.write(f"{row.NAME}:{row.PET}:")
 #Charts
-  st.line_chart(df)
-  st.area_chart(df)
+st.line_chart(df)
+st.area_chart(df)
