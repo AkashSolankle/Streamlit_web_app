@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title='Covid App', page_icon='🧊')
+st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
 #status elements
