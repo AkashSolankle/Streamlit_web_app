@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.set_page_config(page_title='Covid App', page_icon='🧊')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
 #status elements
@@ -9,7 +10,7 @@ conn = st.experimental_connection('snowpark')
 st.title('First :blue[Streamlit] web app :sunglasses:')
 st.text("")
 st.text("")
-st.set_page_config(page_title='Covid App', page_icon='🧊')
+
 st.sidebar.success('Welcome to Home Page')
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
