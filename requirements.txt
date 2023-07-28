@@ -1,5 +1,4 @@
-snowflake-snowpark-python[pandas]
+snowflake-snowpark-python
 snowflake-sqlalchemy
-urllib3
 
 
