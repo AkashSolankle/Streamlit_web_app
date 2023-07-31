@@ -1,4 +1,9 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+
+
+
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
@@ -28,31 +33,16 @@ df = conn.query('SELECT * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.line_chart(df)
 #st.area_chart(df)
 
-chart = {
-    "mark": "point",
-    "encoding": {
-        "x": {
-            "field": "Horsepower",
-            "type": "quantitative",
-        },
-        "y": {
-            "field": "Miles_per_Gallon",
-            "type": "quantitative",
-        },
-        "color": {"field": "Origin", "type": "nominal"},
-        "shape": {"field": "Origin", "type": "nominal"},
+chart_data = df.DataFrame(
+    np.random.randn(200, 3),
+    columns=['PROVINCE', 'PRECIPITATION', 'CODE'])
+
+st.vega_lite_chart(chart_data, {
+    'mark': {'type': 'circle', 'tooltip': True},
+    'encoding': {
+        'x': {'field': 'PROVINCE', 'type': 'quantitative'},
+        'y': {'field': 'PRECIPITATION', 'type': 'quantitative'},
+        'size': {'field': 'CODE', 'type': 'quantitative'},
+        'color': {'field': 'CODE', 'type': 'quantitative'},
     },
-}
-
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Vega-Lite native theme"])
-
-with tab1:
-    # Use the Streamlit theme.
-    # This is the default. So you can also omit the theme argument.
-    st.vega_lite_chart(
-        df, chart, theme="streamlit", use_container_width=True
-    )
-with tab2:
-    st.vega_lite_chart(
-        df, chart, theme=None, use_container_width=True
-    )
+})
