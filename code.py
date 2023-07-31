@@ -1,5 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
+
 
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
@@ -27,6 +27,34 @@ df = conn.query('SELECT * from MYTABLE;', ttl=600)
   #for row in df.itertuples():
   #    st.write(f"{row.NAME}:{row.PET}:")
 #Charts
-st.line_chart(df)
-st.area_chart(df)
-st.pyplot(df)
+#st.line_chart(df)
+#st.area_chart(df)
+
+chart = {
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "quantitative",
+        },
+        "y": {
+            "field": "Pet",
+            "type": "quantitative",
+        },
+        "color": {"field": "Origin", "type": "nominal"},
+        "shape": {"field": "Origin", "type": "nominal"},
+    },
+}
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Vega-Lite native theme"])
+
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.vega_lite_chart(
+        df, chart, theme="streamlit", use_container_width=True
+    )
+with tab2:
+    st.vega_lite_chart(
+        df, chart, theme=None, use_container_width=True
+    )
