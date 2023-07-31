@@ -6,12 +6,8 @@ import streamlit as st
 
 
 
-#read csv file
-dataset_url = "https://raw.githubusercontent.com/Lexie88rus/bank-marketing-analysis/master/bank.csv"
-#summary of data
-# read csv from a URL
-@st.cache_data
-def get_data() -> pd.DataFrame:
-    return pd.read_csv(dataset_url)
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
 
-df = get_data()
+st.map(df)
