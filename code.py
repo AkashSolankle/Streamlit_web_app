@@ -35,7 +35,7 @@ df = conn.query('SELECT * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.line_chart(df)
 #st.area_chart(df)
 
-
+#1st chart
 # Add histogram data
 x1 = np.random.randn(200) - 2
 x2 = np.random.randn(200)
@@ -74,4 +74,22 @@ with tab1:
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 with tab2:
     # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
+
+
+#3rd chart
+st.subheader("Define a custom colorscale")
+df = px.data.iris()
+fig = px.scatter(
+    df,
+    x="sepal_width",
+    y="sepal_length",
+    color="sepal_length",
+    color_continuous_scale="reds",
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
     st.plotly_chart(fig, theme=None, use_container_width=True)
