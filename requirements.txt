@@ -7,3 +7,4 @@ s3fs
 gcsfs
 snowflake-snowpark-python[pandas]
 plotly
+scipy
