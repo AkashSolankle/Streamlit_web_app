@@ -21,7 +21,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 #with st.chat_message("user"):
 #    st.write("Hello 👋")
 # Perform query.
-df = conn.query('SELECT * from MYTABLE;', ttl=600)
+df = conn.query('SELECT * from KORIA_WEATHER_REPORT;', ttl=600)
 
 # Print results.
   #for row in df.itertuples():
@@ -34,11 +34,11 @@ chart = {
     "mark": "point",
     "encoding": {
         "x": {
-            "field": "Name",
+            "field": "Code",
             "type": "quantitative",
         },
         "y": {
-            "field": "Pet",
+            "field": "Province",
             "type": "quantitative",
         },
         "color": {"field": "Origin", "type": "nominal"},
