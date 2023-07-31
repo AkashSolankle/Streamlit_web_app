@@ -8,3 +8,4 @@ gcsfs
 snowflake-snowpark-python[pandas]
 plotly
 scipy
+matplotlib
