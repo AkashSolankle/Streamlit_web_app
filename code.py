@@ -1,7 +1,5 @@
 import streamlit as st
 
-source = data.cars()
-
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
