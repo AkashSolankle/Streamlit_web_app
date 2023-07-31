@@ -1,4 +1,6 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
@@ -27,3 +29,4 @@ df = conn.query('SELECT * from MYTABLE;', ttl=600)
 #Charts
 st.line_chart(df)
 st.area_chart(df)
+st.pyplot(df)
