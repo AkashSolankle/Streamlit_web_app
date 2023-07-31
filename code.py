@@ -1,6 +1,7 @@
 import streamlit as st
+from vega_datasets import data
 
-
+source = data.cars()
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
@@ -34,11 +35,11 @@ chart = {
     "mark": "point",
     "encoding": {
         "x": {
-            "field": "Code",
+            "field": "Horsepower",
             "type": "quantitative",
         },
         "y": {
-            "field": "Province",
+            "field": "Miles_per_Gallon",
             "type": "quantitative",
         },
         "color": {"field": "Origin", "type": "nominal"},
@@ -52,9 +53,9 @@ with tab1:
     # Use the Streamlit theme.
     # This is the default. So you can also omit the theme argument.
     st.vega_lite_chart(
-        df, chart, theme="streamlit", use_container_width=True
+        source, chart, theme="streamlit", use_container_width=True
     )
 with tab2:
     st.vega_lite_chart(
-        df, chart, theme=None, use_container_width=True
+        source, chart, theme=None, use_container_width=True
     )
