@@ -5,8 +5,14 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import pydeck as pdk
 import scipy
+import matplotlib.pyplot as plt
 
 
+
+#read csv file
+movies_data = pd.read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/7c6a562377ab5c91bb80c405be50a0494ae8e582/movies.csv")
+#summary of data
+movies_data.info()
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
