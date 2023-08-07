@@ -6,9 +6,9 @@ import plotly.express as px
 import pydeck as pdk
 import scipy
 import matplotlib.pyplot as plt
+from snowflake.snowpark.context import get_active_session
 
-
-
+session = get_active_session()
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
