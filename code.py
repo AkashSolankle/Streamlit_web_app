@@ -7,6 +7,8 @@ import pydeck as pdk
 import scipy
 import matplotlib.pyplot as plt
 from snowflake.snowpark.context import get_active_session
+from streamlit_extras.switch_page_button import switch_page
+
 
 session = get_active_session()
 
