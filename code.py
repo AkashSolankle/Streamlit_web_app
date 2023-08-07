@@ -36,7 +36,7 @@ snowpark_df = session.create_dataframe(df_edited)
 write_to_snowflake = st.form("Update")
 
 if write_to_snowflake:
-    with st.spinner("Updating.....!!")
+    with st.spinner("Updating.....!!"):
         snowpark_df.write_mode("Overwrite").save_as_table("DEMO_DATABASE.TEST_SCHEMA.KORIA_WEATHER_REPORT")
     st.success("Wrote to snowflake successfully")
 
