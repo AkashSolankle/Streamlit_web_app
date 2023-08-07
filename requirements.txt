@@ -6,6 +6,7 @@ git+https://github.com/streamlit/files-connection
 s3fs
 gcsfs
 snowflake-snowpark-python[pandas]
+streamlit-extras
 plotly
 scipy
 matplotlib
