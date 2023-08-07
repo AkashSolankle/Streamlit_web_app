@@ -31,7 +31,10 @@ st.sidebar.success('Welcome to Home Page :tada:')
 # Perform query.
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.dataframe(df)
-st.data_editor(df)
+df_edited = st.data_editor(df)
+snowpark_df = session.create_dataframe(df_edited)
+write_to_snowflake = st.form_submit_button("Update")
+
 
 #st.line_chart(df)
 #st.area_chart(df)
