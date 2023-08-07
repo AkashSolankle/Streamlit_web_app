@@ -31,7 +31,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 # Perform query.
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 st.dataframe(df)
-st.dataframe(df.style.highlight_max(axis=0))
+
 #st.line_chart(df)
 #st.area_chart(df)
 
