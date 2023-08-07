@@ -32,8 +32,8 @@ st.sidebar.success('Welcome to Home Page :tada:')
 df = conn.query('SELECT * from KORIA_WEATHER_REPORT;', ttl=600)
 
 # Print results.
-  for row in df.itertuples():
-      st.write(f"{row.NAME}:{row.PET}:")
+for row in df.itertuples():
+    st.write(f"{row.NAME}:{row.PET}:")
 #Charts
 #st.line_chart(df)
 #st.area_chart(df)
