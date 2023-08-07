@@ -6,11 +6,9 @@ import plotly.express as px
 import pydeck as pdk
 import scipy
 import matplotlib.pyplot as plt
-from snowflake.snowpark.context import get_active_session
 from streamlit_extras.switch_page_button import switch_page
 
 
-session = get_active_session()
 
 st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
@@ -33,9 +31,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 # Perform query.
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.dataframe(df)
-df_edited = st.data_editor(df)
-snowpark_df = session.create_dataframe(df_edited)
-write_to_snowflake = st.form("Update")
+st.data_editor(df)
 
 #st.line_chart(df)
 #st.area_chart(df)
