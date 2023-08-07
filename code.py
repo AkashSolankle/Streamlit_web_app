@@ -32,7 +32,6 @@ st.sidebar.success('Welcome to Home Page :tada:')
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.dataframe(df)
 df_edited = st.data_editor(df)
-df.['Feature_Request #1'] = ''
 snowpark_df = session.create_dataframe(df_edited)
 write_to_snowflake = st.form("Update")
 
