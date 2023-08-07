@@ -33,7 +33,7 @@ df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 #st.dataframe(df)
 df_edited = st.data_editor(df)
 snowpark_df = session.create_dataframe(df_edited)
-write_to_snowflake = st.form_submit_button("Update")
+write_to_snowflake = st.form("Update")
 
 
 #st.line_chart(df)
