@@ -33,7 +33,7 @@ df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 
 # Print results.
 for row in df.itertuples():
-    st.write(f"{row.CODE}:{row.PROVINCE}:")
+    st.write(f"{row.CODE}:{row.PROVINCE}:{row.DATE}:{row.AVG_TEMP}:{row.MIN_TEMP}:{row.MAX_TEMP}:{row.PRECIPITATION}:{row.MAX_WIND_SPEED}:{row.MOST_WIND_DIRECTION}:")
 #Charts
 #st.line_chart(df)
 #st.area_chart(df)
