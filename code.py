@@ -48,5 +48,8 @@ if submit_button:
     #display success message for 5 seconds and update the table to reflect what is in Snowflake
     st.experimental_rerun()
 #st.line_chart(df)
+st.text("")
+st.text("")
+st.text("")
 st.area_chart(df, x='PROVINCE', y='CODE')
 
