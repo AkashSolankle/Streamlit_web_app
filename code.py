@@ -31,7 +31,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 #with st.chat_message("user"):
 #    st.write("Hello 👋")
 # Perform query.
-df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
+df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600).to_pandas()
 df["Additional Column"] = ''
 #st.dataframe(df)
 with st.form("data_editor_form"):
