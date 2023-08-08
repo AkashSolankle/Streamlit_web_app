@@ -52,4 +52,4 @@ st.text("")
 st.text("")
 st.text("")
 st.area_chart(df, x='PROVINCE', y='CODE')
-
+st.line_chart(df, x='PROVINCE', y='CODE')
