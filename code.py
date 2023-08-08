@@ -32,6 +32,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 #    st.write("Hello 👋")
 # Perform query.
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
+df["Additional Column"] = ''
 #st.dataframe(df)
 with st.form("data_editor_form"):
     st.caption("Edit the dataframe below")
