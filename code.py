@@ -55,5 +55,5 @@ st.text("")
 st.area_chart(df, x='PROVINCE', y='CODE')
 st.line_chart(df, x='PROVINCE', y='CODE')
 c = alt.Chart(df).mark_circle().encode(
-    x='PROVINCE', y='CODE', size='c', color='c', tooltip=['PROVINCE', 'CODE', 'PRECIPITATION'])
+    x='PROVINCE', y='CODE', size='PRECIPITATION', color='PRECIPITATION', tooltip=['PROVINCE', 'CODE', 'PRECIPITATION'])
 st.altair_chart(c, use_container_width=True)
