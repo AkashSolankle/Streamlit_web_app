@@ -68,4 +68,4 @@ if st.button('Three cheers'):
     time.sleep(.5)
     st.toast('Hip!')
     time.sleep(.5)
-    st.toast('Hooray!', icon='🎉')
+    st.toast('Hooray!', icon=':bell:')
