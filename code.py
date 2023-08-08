@@ -35,7 +35,7 @@ with st.chat_message("user"):
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 
 
-st.dataframe(df)
+#st.dataframe(df)
 with st.form("data_editor_form"):
     st.caption("Edit the dataframe below")
     edited = st.data_editor(df, use_container_width=True, num_rows="dynamic")
