@@ -14,7 +14,7 @@ st.set_page_config(page_title='Covid App', page_icon=':mask:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
 #status elements
-  #st.snow()
+st.snow()
   #st.balloons()
 #Title
 st.title('First :blue[Streamlit] web app :sunglasses:')
