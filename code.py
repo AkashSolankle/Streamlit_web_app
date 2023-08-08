@@ -29,17 +29,17 @@ st.sidebar.success('Welcome to Home Page :tada:')
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
 
-#with st.chat_message("user"):
-#    st.write("Hello 👋")
+with st.chat_message("user"):
+    st.write("Hello 👋")
 # Perform query.
 df = conn.query('SELECT top 1000 * from KORIA_WEATHER_REPORT;', ttl=600)
 
-st.write(df)
-#st.dataframe(df)
-#with st.form("data_editor_form"):
- #   st.caption("Edit the dataframe below")
-  #  edited = st.data_editor(df, use_container_width=True, num_rows="dynamic")
-   # submit_button = st.form_submit_button("Submit")
+
+st.dataframe(df)
+with st.form("data_editor_form"):
+    st.caption("Edit the dataframe below")
+    edited = st.data_editor(df, use_container_width=True, num_rows="dynamic")
+    submit_button = st.form_submit_button("Submit")
 
 if submit_button:
     try:
