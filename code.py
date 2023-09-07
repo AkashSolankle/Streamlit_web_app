@@ -28,8 +28,9 @@ st.sidebar.success('Welcome to Home Page :tada:')
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
 user = session.sql( 'select current_user()')
+
 with st.chat_message("user"):
-    st.write("Hello" + user)
+    st.write("Hello" {user})
 # Perform query.
 df = session.table('TAGGING_SAMPLE')
 
