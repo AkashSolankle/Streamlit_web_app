@@ -12,7 +12,7 @@ from streamlit_extras.switch_page_button import switch_page
 from snowflake.snowpark import Session
 
 
-st.set_page_config(page_title='Covid App', page_icon=':wave:')
+st.set_page_config(page_title='Experimental Connection', page_icon=':wave:')
 # Initialize connection.
 session = st.experimental_connection('snowpark').session
 #status elements
@@ -27,9 +27,9 @@ st.sidebar.success('Welcome to Home Page :tada:')
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
-
+user = session.sql( 'select current_user()')
 with st.chat_message("user"):
-    st.write("Hello 👋")
+    st.write("Hello user👋")
 # Perform query.
 df = session.table('TAGGING_SAMPLE')
 
