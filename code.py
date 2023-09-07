@@ -31,7 +31,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 with st.chat_message("user"):
     st.write("Hello 👋")
 # Perform query.
-df = session.table('TAGGING_SAMPLE)
+df = session.table('TAGGING_SAMPLE')
 
 
 #st.dataframe(df)
