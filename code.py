@@ -12,11 +12,10 @@ from streamlit_extras.switch_page_button import switch_page
 from snowflake.snowpark import Session
 
 
-
-session = st.session_state
 st.set_page_config(page_title='Covid App', page_icon=':wave:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
+session = st.session_state.snowflake_connection
 #status elements
 #st.snow()
 #st.balloons()
