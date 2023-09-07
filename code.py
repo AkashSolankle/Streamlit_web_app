@@ -9,10 +9,8 @@ import altair as alt
 import matplotlib.pyplot as plt
 import time
 from streamlit_extras.switch_page_button import switch_page
-from snowflake.snowpark.context import get_active_session
 
 
-session = get_active_session()
 st.set_page_config(page_title='Covid App', page_icon=':wave:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
