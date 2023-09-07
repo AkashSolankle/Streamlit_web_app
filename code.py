@@ -29,7 +29,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
   #st.code(code, language='python')
 user = session.sql( 'select current_user()')
 with st.chat_message("user"):
-    st.write("Hello" user)
+    st.write("Hello" + user)
 # Perform query.
 df = session.table('TAGGING_SAMPLE')
 
