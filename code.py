@@ -28,7 +28,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
 user = session.sql( 'select current_user()')
-dataframe = pd.datafram(user)
+dataframe = pd.DataFrame(user)
 st.table(dataframe)
 
 with st.chat_message("user"):
