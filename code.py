@@ -27,15 +27,14 @@ st.sidebar.success('Welcome to Home Page :tada:')
 #Code block
   #code = '''st.title('First :blue[Streamlit] web app :sunglasses:')'''
   #st.code(code, language='python')
-user = session.sql( 'select current_user()')
-user.values[:1]
-
+user = session.sql( 'select current_user()').
+dataframe = pd.datafram(user)
+st.table(dataframe)
 
 with st.chat_message("user"):
     st.write(user)
 # Perform query.
 df = session.table('TAGGING_SAMPLE')
-
 
 #st.dataframe(df)
 with st.form("data_editor_form"):
