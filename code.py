@@ -29,7 +29,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
   #st.code(code, language='python')
 user = session.sql( 'select current_user()')
 df = st.dataframe(user)
-tmp = df.['CURRENT_USER()'].values[:1]
+tmp = df.columns
 tmp
 with st.chat_message("user"):
     st.write(user)
