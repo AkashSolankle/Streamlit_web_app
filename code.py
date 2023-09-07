@@ -13,7 +13,7 @@ from snowflake.snowpark import Session
 
 
 
-session = st.session_state.snowflake_connection
+session = st.session_state
 st.set_page_config(page_title='Covid App', page_icon=':wave:')
 # Initialize connection.
 conn = st.experimental_connection('snowpark')
