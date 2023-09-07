@@ -14,8 +14,7 @@ from snowflake.snowpark import Session
 
 st.set_page_config(page_title='Covid App', page_icon=':wave:')
 # Initialize connection.
-conn = st.experimental_connection('snowpark')
-session = st.session_state.snowflake_connection
+session = st.experimental_connection('snowpark').session
 #status elements
 #st.snow()
 #st.balloons()
@@ -32,7 +31,7 @@ st.sidebar.success('Welcome to Home Page :tada:')
 with st.chat_message("user"):
     st.write("Hello 👋")
 # Perform query.
-df = conn.query('SELECT * from TAGGING_SAMPLE;', ttl=600)
+df = session.query('SELECT * from TAGGING_SAMPLE;', ttl=600)
 
 
 #st.dataframe(df)
